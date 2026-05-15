@@ -4,7 +4,6 @@
   "skills": [
     { "name": "commit", "path": "../shared/commit.md" },
     { "name": "summarize-branch-changes", "path": "../shared/summarize-branch-changes.md" },
-    { "name": "review", "path": "../shared/review.md" },
-    { "name": "backend-review", "path": "review/backend-review.md" }
+    { "name": "review", "path": "../shared/review.md" }
   ]
 }
