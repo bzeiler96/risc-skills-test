@@ -4,34 +4,33 @@ RISC Software internal Claude Code skills.
 
 ## Packages
 
-| Package | Install path | Enthält |
-|---------|-------------|---------|
+| Package | Path | Contains |
+|---------|------|----------|
 | `risc-shared` | `shared/` | `commit`, `summarize-branch-changes`, `review` |
-| `risc-dsa` | `dsa/` | alle shared Skills + DSA skill-memories |
+| `risc-dsa` | `dsa/` | all shared skills + DSA skill-memories |
 
 ## Installation
 
 ```bash
-# Nur shared (andere Abteilungen)
+# Shared only (other departments)
 npx skills add <repo-url>/shared
 
-# DSA (Skills + skill-memories einrichten)
+# DSA (skills + skill-memories)
 npx skills add <repo-url>/dsa
 cp dsa/skill-memories/review.md .claude/skill-memories/review.md
 ```
 
-## Skill-memories (Erweiterungen)
+## Skill-memories (extensions)
 
-Skill-memories erweitern einen Base-Skill projektspezifisch ohne ihn zu forken.
-Sie liegen im Projekt unter `.claude/skill-memories/<skill-name>.md`.
+Skill-memories extend a base skill without forking it.
+They live in the project under `.claude/skill-memories/<skill-name>.md`.
 
-**Layers:**
+**Three layers:**
 
 ```
-shared/review.md                             ← Base (git-Befehle, allg. Checks, Output-Format)
-dsa/skill-memories/review.md                ← DSA-Extension (null safety, DDD, AsciiDoc)
-<projekt>/.claude/skill-memories/review.md  ← Projekt-Extension (z.B. Angular-Konventionen)
+shared/review.md                             ← Base (git commands, general checks, output format)
+dsa/skill-memories/review.md                ← DSA extension (null safety, DDD, AsciiDoc)
+<project>/.claude/skill-memories/review.md  ← Project extension (e.g. Angular conventions)
 ```
 
-Für projektspezifische Erweiterungen die DSA skill-memory als Ausgangspunkt nehmen
-und projektspezifische Konventionen anhängen.
+For project-specific extensions, use the DSA skill-memory as a starting point and append project-specific conventions.
