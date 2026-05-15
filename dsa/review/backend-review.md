@@ -1,6 +1,6 @@
 ---
 name: backend-review
-description: Review all changes between the current branch and main — DSA backend (Java/Kotlin, domain-driven, AsciiDoc)
+description: DSA backend code review — extends the shared review skill with Java/Kotlin and domain-driven specifics
 ---
 
 ## Fetch latest main (so we compare against the actual remote state)
@@ -21,18 +21,12 @@ If the "Full diff" above was truncated or persisted to a file, use the Read tool
 
 ## Analysis
 
-Analyze the above diff and provide feedback on:
+Apply all checks from the shared `review` skill (correctness, security, documentation). Additionally check:
 
-- **Correctness** — logic errors, edge cases, off-by-one mistakes
-- **Null safety** — nullable types handled explicitly; no `!!` operator; safe-call chains (`?.`) used where appropriate; Java interop boundaries (e.g., platform types) treated as nullable
-- **Security** — injection risks, credential exposure, OWASP top 10
+- **Null safety** — nullable types handled explicitly; no `!!` operator; safe-call chains (`?.`) used where appropriate; Java interop boundaries treated as nullable
 - **Domain-driven structure** — business logic in domain layer, no framework leakage into domain classes, aggregates and value objects used correctly
-- **Test coverage** — are new code paths covered? Are existing tests still valid? Are AsciiDoc test reports (`.adoc`) updated if applicable?
-- **Documentation** — do README.md, AsciiDoc files, or CLAUDE.md need updates?
+- **Test coverage** — new code paths covered; existing tests still valid; AsciiDoc test reports (`.adoc`) updated if applicable
 
 ## Output format
 
-For each finding, include:
-- File path and line number
-- Severity: **critical**, **warning**, or **suggestion**
-- Description and recommended fix
+Same as the shared `review` skill: file path, line number, severity (**critical** / **warning** / **suggestion**), description, recommended fix.
