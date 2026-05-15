@@ -1,25 +1,43 @@
-# /commit
+---
+name: commit
+description: Stage and commit changes with a conventional commit message
+---
 
-Erstelle einen Git-Commit nach RISC-Konventionen.
+## Flags
 
-## Verhalten
+- `--staged`: commit only what is already staged; do not stage any additional files.
+- _(default, no flag)_: stage all relevant changed and untracked files, then commit.
 
-1. Führe `git diff --staged` aus um die gestageten Änderungen zu sehen
-2. Falls nichts gestaget ist, führe `git status` aus und frage den User was committet werden soll
-3. Schreibe eine Commit-Message nach dem Schema: `<type>(<scope>): <beschreibung>`
-4. Erstelle den Commit — kein `--no-verify`
+## Steps
 
-## Commit-Types
+**If `--staged` flag is present:**
+1. Run `git status` and `git diff --staged` to understand what is already staged
+2. Run `git log --oneline -5` to see recent commit message style
+3. Draft a commit message based on the staged diff only
+4. Commit — do not stage any additional unstaged or untracked files
 
-- `feat` — neue Funktionalität
-- `fix` — Bugfix
-- `refactor` — Umstrukturierung ohne Verhaltensänderung
-- `docs` — Dokumentation
-- `test` — Tests
-- `chore` — Build, Dependencies, CI
+**Otherwise (default):**
+1. Run `git status` to see all changed and untracked files
+2. Run `git diff` to understand staged and unstaged changes
+3. Run `git log --oneline -5` to see recent commit message style
+4. Draft a concise English commit message (lowercase, no trailing period)
+5. Stage only relevant files by name (never use `git add -A` or `git add .`)
+6. Commit using the format below
 
-## Regeln
+## Commit message format
 
-- Beschreibung auf Deutsch, max. 72 Zeichen
-- Kein Punkt am Ende der Subject-Line
-- Breaking Changes im Footer mit `BREAKING CHANGE:` kennzeichnen
+```
+<type>: <short description>
+
+<optional body with details>
+
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+```
+
+**Types:** feat, fix, refactor, docs, test, chore
+
+## Rules
+
+- Message must be in English
+- Do not commit files that may contain secrets (`.env`, credentials, private keys)
+- Never use `--no-verify`

@@ -1,6 +1,6 @@
 ---
-name: review-branch
-description: Review all changes between the current branch and main
+name: review
+description: Review all changes between the current branch and main — git commands, general analysis, and output format
 ---
 
 ## Fetch latest main (so we compare against the actual remote state)
@@ -15,17 +15,17 @@ description: Review all changes between the current branch and main
 ## Full diff
 !`git diff origin/main...HEAD`
 
-## Review checklist
+## Before reviewing
 
-**Before reviewing**: If the "Full diff" above was truncated or persisted to a file, use the Read tool to load the complete diff. Do not review based on stats or file lists alone — you must see the actual code changes.
+If the "Full diff" above was truncated or persisted to a file, use the Read tool to load the complete diff. Do not review based on stats or file lists alone — you must see the actual code changes.
+
+## General analysis
 
 Analyze the above diff and provide feedback on:
 
 - **Correctness** — logic errors, edge cases, off-by-one mistakes
-- **Null safety** — nullable values handled properly, especially in Java/Kotlin interop contexts
 - **Security** — injection risks, credential exposure, OWASP top 10
-- **Test coverage** — are new code paths tested? Are existing tests still valid? AsciiDoc documentation updated?
-- **Documentation** — do README.md, AsciiDoc files, or CLAUDE.md need updates?
+- **Documentation** — do README.md or CLAUDE.md need updates based on the changes?
 
 ## Output format
 
