@@ -1,0 +1,8 @@
+{
+  "name": "risc-shared",
+  "description": "RISC Software shared skills (cross-department)",
+  "skills": [
+    { "name": "commit", "path": "commit.md" },
+    { "name": "summarize-branch-changes", "path": "summarize-branch-changes.md" }
+  ]
+}

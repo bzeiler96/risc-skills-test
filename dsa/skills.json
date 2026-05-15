@@ -1,0 +1,9 @@
+{
+  "name": "risc-dsa",
+  "description": "RISC Software DSA department skills (includes shared)",
+  "skills": [
+    { "name": "commit", "path": "../shared/commit.md" },
+    { "name": "summarize-branch-changes", "path": "../shared/summarize-branch-changes.md" },
+    { "name": "review-branch", "path": "review/review.md" }
+  ]
+}
