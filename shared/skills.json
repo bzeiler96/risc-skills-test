@@ -4,6 +4,5 @@
   "skills": [
     { "name": "commit", "path": "commit.md" },
     { "name": "summarize-branch-changes", "path": "summarize-branch-changes.md" },
-    { "name": "review", "path": "review.md" }
   ]
 }
