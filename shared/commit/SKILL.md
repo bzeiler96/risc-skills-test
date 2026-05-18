@@ -41,3 +41,4 @@ Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
 - Message must be in English
 - Do not commit files that may contain secrets (`.env`, credentials, private keys)
 - Never use `--no-verify`
+- Test for new line
