@@ -1,6 +1,6 @@
 # risc-skills
 
-RISC Software internal Claude Code skills.
+Agent Skill Management Tool testing.
 
 ## Packages
 
@@ -11,5 +11,5 @@ RISC Software internal Claude Code skills.
 ## Installation
 
 ```bash
-npx skills add <repo-url>/shared
+npx skills add <repo-url>
 ```
